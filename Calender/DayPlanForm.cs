@@ -11,9 +11,11 @@ namespace Calender
             InitializeComponent();
         }
 
-        public void LoadDate(string date)
+        private DateTime _date;
+        public void LoadDate(DateTime date)
         {
-            _lblDate.Text = date;
+            _date = date;
+            _lblDate.Text = $"{_date.Day}.{_date.Month}.{_date.Year}";
         }
         private void _pnlPlan_Paint(object sender, PaintEventArgs e)
         {

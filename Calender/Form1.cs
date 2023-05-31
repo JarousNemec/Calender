@@ -130,6 +130,7 @@ namespace Calender
             int day = y * 7 + x;
             int month = _actualDate.Month;
             int year = _actualDate.Year;
+            
             if (DateTime.DaysInMonth(year, month) < day)
             {
                 day -= DateTime.DaysInMonth(year, month);
@@ -143,8 +144,9 @@ namespace Calender
                     month++;
                 }
             }
+            
             var plan = new DayPlanForm();
-            plan.LoadDate($"{day}.{month}.{year}");
+            plan.LoadDate(new DateTime(year, month, day));
             plan.Show();
         }
     }
